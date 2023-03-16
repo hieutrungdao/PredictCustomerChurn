@@ -1,0 +1,8 @@
+root - INFO - Testing import_data: SUCCESS
+root - INFO - Testing get_churn: SUCCESS
+root - INFO - Testing save_figure: SUCCESS
+root - INFO - Testing perform_eda: SUCCESS
+root - INFO - Testing encode_category: SUCCESS
+root - INFO - Testing encoder_helper: SUCCESS
+root - INFO - Testing perform_feature_engineering: SUCCESS
+root - INFO - Testing train_models: SUCCESS
