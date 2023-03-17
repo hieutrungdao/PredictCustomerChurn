@@ -227,15 +227,21 @@ def classification_report_image(y_train,
     test_report = classification_report(y_test, y_test_preds, output_dict=True)
     print('Test results')
     print(test_report)
-    save_figure(sns.heatmap(pd.DataFrame(
-        test_report).iloc[:-1, :].T, annot=True), f"{model_name}_test_report.png")
+    save_figure(sns.heatmap(
+        pd.DataFrame(test_report).iloc[:-1, :].T, annot=True), 
+        f"{model_name}_test_report.png",
+        "images/results"
+    )
 
     train_report = classification_report(
         y_train, y_train_preds, output_dict=True)
     print('Train results')
     print(train_report)
-    save_figure(sns.heatmap(pd.DataFrame(
-        train_report).iloc[:-1, :].T, annot=True), f"{model_name}_train_report.png")
+    save_figure(sns.heatmap(
+        pd.DataFrame(train_report).iloc[:-1, :].T, annot=True), 
+        f"{model_name}_train_report.png",
+        "images/results"
+    )
 
 
 def feature_importance_plot(model, x_data, output_pth):
@@ -327,11 +333,11 @@ def train_models(x_train, x_test, y_train, y_test):
         else:
             plot_roc_curve(
                 model, x_test, y_test, ax=ax_subplot, alpha=0.8)
-    save_figure(ax_subplot, "roc_curve.png", folder_path="images/eda")
+    save_figure(ax_subplot, "roc_curve.png", folder_path="images/results")
 
     for model in models:
         if isinstance(model, GridSearchCV):
-            feature_importance_plot(model, x_train, "feature_importances.png")
+            feature_importance_plot(model, x_train, "images/results/feature_importances.png")
 
     for model in models:
         if isinstance(model, GridSearchCV):

@@ -227,7 +227,7 @@ def test_train_models(train_models, x_train, x_test, y_train, y_test):
         raise err
 
     try:
-        assert os.path.exists("images/eda/roc_curve.png")
+        assert os.path.exists("images/results/roc_curve.png")
     except AssertionError as err:
         logging.error(
             "Testing train_models: Not found score figure file")
